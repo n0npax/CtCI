@@ -1,6 +1,6 @@
 import pytest
 
-from solution import is_string_permutation
+from solution import is_permutation
 
 
 @pytest.mark.parametrize(
@@ -14,4 +14,4 @@ from solution import is_string_permutation
     ],
 )
 def test_uniq_chars(input_str1: str, input_str2, expected: bool):
-    assert is_string_permutation(input_str1, input_str2) == expected
+    assert is_permutation(input_str1, input_str2) == expected
