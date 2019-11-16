@@ -7,7 +7,7 @@ matrix:
       before_script:
         - pip install codecov pytest pytest-cov black bandit
       script:
-	- python3 -m black --check -q .
+        - python3 -m black --check -q .
         - python3 -m pytest --cov-report=xml --cov . . &&  codecov --file coverage.xml
     - language: go
       script:

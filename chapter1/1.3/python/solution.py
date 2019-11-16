@@ -1,4 +1,5 @@
 from collections import Counter
+
 # bytearray is printable and can substiture cstring for question purposes
 # Assumption: sufficent spaces at the end means enough or more. if there is more spaces then needed, spaces at the end are not stripped nor repleaced
 def urlify(s: bytearray, l: int) -> bytearray:
