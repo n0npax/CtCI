@@ -2,7 +2,7 @@ import pytest
 
 from itertools import permutations
 
-from solution import palindrome_permutations, custom_permutations
+from solution4 import palindrome_permutations, custom_permutations
 
 
 @pytest.mark.parametrize(

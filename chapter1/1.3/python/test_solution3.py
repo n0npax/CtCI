@@ -1,6 +1,6 @@
 import pytest
 
-from solution import urlify
+from solution3 import urlify
 
 
 @pytest.mark.parametrize(

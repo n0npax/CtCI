@@ -4,11 +4,16 @@ matrix:
   include:
     - language: python
       python: 3.8
+      env:
+        - PYTHONDONTWRITEBYTECODE=true
       before_script:
         - pip install codecov pytest pytest-cov black bandit
       script:
         - python3 -m black --check -q .
-        - python3 -m pytest --cov-report=xml --cov . . &&  codecov --file coverage.xml
+        - bandit -r . -x $(find . -name "test_*.py" | tr "\n" ",")
+        - find . -name __pycache__ -type d -exec rm -fr {} \;
+        - python3 -m pytest --cov-report=xml --cov . .
+        - codecov --file coverage.xml
     - language: go
       script:
         - echo "TODO"

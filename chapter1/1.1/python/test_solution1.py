@@ -1,6 +1,6 @@
 import pytest
 
-from solution import uniq_chars
+from solution1 import uniq_chars
 
 
 @pytest.mark.parametrize(

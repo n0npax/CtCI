@@ -1,6 +1,6 @@
 import pytest
 
-from solution import is_permutation
+from solution2 import is_permutation
 
 
 @pytest.mark.parametrize(
