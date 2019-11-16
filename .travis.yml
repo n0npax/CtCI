@@ -14,6 +14,3 @@ matrix:
         - find . -name __pycache__ -type d -exec rm -fr {} \;
         - python3 -m pytest --cov-report=xml --cov . .
         - codecov --file coverage.xml
-    - language: go
-      script:
-        - echo "TODO"

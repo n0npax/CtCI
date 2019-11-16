@@ -12,7 +12,7 @@ from solution4 import palindrome_permutations, custom_permutations
         ("aa", set(["aa"])),
         ("aba", set(["aab", "aba", "baa"])),
         (
-            "abcba",
+            "aabbc",
             set(
                 [
                     "acbba",
@@ -55,7 +55,7 @@ def test_palindrome_permutations(input_str: str, expected: tuple):
     assert palindrome_permutations(input_str) == expected
 
 
-@pytest.mark.parametrize("input_str", [("abc",), ("abad",), ("llama",)])
+@pytest.mark.parametrize("input_str", [("abc",), ("abad",), ("llama",), ("abcde",)])
 def test_custom_permutations(input_str: str):
     custom_permutations_set = set("".join(x) for x in custom_permutations(input_str))
     standard_permutations_set = set("".join(x) for x in permutations(input_str))
