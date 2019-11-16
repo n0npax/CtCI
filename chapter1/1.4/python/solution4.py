@@ -24,9 +24,8 @@ def custom_permutations(s: str) -> Generator[str, None, None]:
         yield s
     for i in range(len(s)):
         sl = list(s)
-        if sl[i] == sl[0]:
-            continue
-        sl[i], sl[0] = sl[0], sl[i]
+        if sl[i] != sl[0]:
+            sl[i], sl[0] = sl[0], sl[i]
         sl = "".join(sl)
-        for ys in custom_permuataions(sl[1:]):
+        for ys in custom_permutations(sl[1:]):
             yield sl[0] + ys
