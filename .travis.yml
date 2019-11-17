@@ -3,14 +3,23 @@ sudo: false
 matrix:
   include:
     - language: python
+      name: tests and coverage
       python: 3.8
       env:
         - PYTHONDONTWRITEBYTECODE=true
       before_script:
-        - pip install codecov pytest pytest-cov black bandit
+        - pip install codecov pytest pytest-cov
+      script:
+        - python3 -m pytest --cov-report=xml --cov . .
+        - codecov --file coverage.xml
+    - language: python
+      name: linters
+      python: 3.8
+      env:
+        - PYTHONDONTWRITEBYTECODE=true
+      before_script:
+        - pip install codecov black bandit isort
       script:
         - python3 -m black --check -q .
         - isort $(find . -name "*.py") -c
         - bandit -r . -x $(find . -name "test_*.py" | tr "\n" ",")
-        - python3 -m pytest --cov-report=xml --cov . .
-        - codecov --file coverage.xml
