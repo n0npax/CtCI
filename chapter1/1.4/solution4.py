@@ -1,6 +1,6 @@
-from typing import Generator
 from collections import Counter
 from itertools import permutations
+from typing import Generator
 
 
 def palindrome_permutations(s: str) -> set:

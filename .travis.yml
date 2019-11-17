@@ -10,7 +10,7 @@ matrix:
         - pip install codecov pytest pytest-cov black bandit
       script:
         - python3 -m black --check -q .
+        - isort $(find . -name "*.py") -c
         - bandit -r . -x $(find . -name "test_*.py" | tr "\n" ",")
-        - find . -name __pycache__ -type d -exec rm -fr {} \;
         - python3 -m pytest --cov-report=xml --cov . .
         - codecov --file coverage.xml

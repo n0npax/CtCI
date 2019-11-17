@@ -1,8 +1,8 @@
-import pytest
-
 from itertools import permutations
 
-from solution4 import palindrome_permutations, custom_permutations
+import pytest
+
+from solution4 import custom_permutations, palindrome_permutations
 
 
 @pytest.mark.parametrize(
