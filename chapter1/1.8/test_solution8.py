@@ -18,5 +18,5 @@ from solution8 import zero_fun
         ),
     ],
 )
-def test_compression(input_matrix: list, expected: list):
+def test_zero_fun(input_matrix: list, expected: list):
     assert zero_fun(input_matrix) == expected

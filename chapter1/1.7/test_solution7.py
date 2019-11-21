@@ -15,5 +15,5 @@ from solution7 import rotate
         ),
     ],
 )
-def test_compression(input: list, expected: list):
+def test_rotate(input: list, expected: list):
     assert rotate(input) == expected
