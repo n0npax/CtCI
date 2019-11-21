@@ -11,6 +11,7 @@ from solution6 import compression
         ("abc", "abc"),
         ("aaabbb", "a3b3"),
         ("aaaAAAaaa", "a3A3a3"),
+        ("abcdefg", "abcdefg"),
     ],
 )
 def test_compression(input_str: str, expected: str):
