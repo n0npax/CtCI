@@ -14,6 +14,7 @@ matrix:
       go: 1.13.x
       script:
         - go test -v -race -coverprofile=coverage.out -covermode=atomic ./...
+        - bash <(curl -s https://codecov.io/bash) -cF go
     - language: python
       name: tests and coverage python
       python: 3.8
@@ -23,7 +24,7 @@ matrix:
         - pip install codecov pytest pytest-cov
       script:
         - python3 -m pytest --cov-report=xml --cov . .
-        - codecov --file coverage.xml
+        - bash <(curl -s https://codecov.io/bash) -cF python
     - language: python
       name: linters python
       python: 3.8
