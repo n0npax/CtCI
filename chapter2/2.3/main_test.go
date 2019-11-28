@@ -26,7 +26,11 @@ func Test_rmElFromMiddle(t *testing.T) {
 			for _, v := range tt.numbers {
 				l.PushBack(v)
 			}
-			rmElFromMiddle(l)
+			if tt.numbers != nil {
+				rmElFromMiddle(l)
+			} else {
+				rmElFromMiddle(nil)
+			}
 
 			got := []int{}
 			for element := l.Front(); element != nil; element = element.Next() {
