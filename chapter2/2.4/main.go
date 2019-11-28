@@ -7,10 +7,7 @@ import (
 func partitionByX(l *list.List, k int) *list.List {
 	nl := list.New()
 	for element := l.Front(); element != nil; element, _ = element.Next(), l.Remove(element) {
-		v, ok := element.Value.(int)
-		if !ok {
-			panic("list expected to contain integers")
-		}
+		v, _ := element.Value.(int)
 		if v <= k {
 			nl.PushFront(v)
 		} else {
