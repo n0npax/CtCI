@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func Test_rmElFromMiddle(t *testing.T) {
+func Test_sumList(t *testing.T) {
 
 	tests := []struct {
 		name     string
